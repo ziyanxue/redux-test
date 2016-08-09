@@ -8,7 +8,7 @@ export const FILTER_STATES = {
     SHOW_ACTIVE : 'SHOW_ACTIVE'
 }
 //action creators
-export function addTodo(text) {debugger
+export function addTodo(text) {
     return {
         type: ADD_TODO,
         text

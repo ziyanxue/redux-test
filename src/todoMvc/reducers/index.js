@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux'
 import {ADD_TODO,COMPLETE_TODO,FILTER_TODO,FILTER_STATES} from '../actions'
 
-function filterReducer(state = FILTER_STATES.SHOW_ALL, action) {
+function filterState(state = FILTER_STATES.SHOW_ALL, action) {
     switch (action.type) {
         case FILTER_TODO:
             return action.filter;
@@ -11,7 +11,7 @@ function filterReducer(state = FILTER_STATES.SHOW_ALL, action) {
     }
 }
 
-function todosReducer(state=[], action) {
+function todos(state=[], action) {
     switch (action.type) {
         case ADD_TODO:
             return [
@@ -37,8 +37,8 @@ function todosReducer(state=[], action) {
 
 //TODO 手动
 const reducers = combineReducers({
-    filterReducer,
-    todosReducer
+    filterState,
+    todos
 });
 
 export default reducers;

@@ -5,7 +5,7 @@ class AddTodo extends Component {
         super(props);
         this.addHandle = this.addHandle.bind(this);
     }
-    addHandle(e){debugger
+    addHandle(e){
         e.preventDefault();
         const node = this.refs.addIpt;
         const value = node.value.trim();

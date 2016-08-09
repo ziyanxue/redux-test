@@ -40,7 +40,7 @@ function selectTodos(todos, filter) {
 function mapStateToProps(state){
     return {
         filterState : state.filterState,
-        visibleTodos : selectTodos(state.todos,state.filterState)
+        filteredTodos : selectTodos(state.todos,state.filterState)
     }
 }
 
