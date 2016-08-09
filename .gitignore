@@ -1,0 +1,8 @@
+npm-debug.log
+.idea/
+.idea/workspace.xml
+.DS_Store
+Thumbs.db
+.svn/
+node_modules
+sea_modules
