@@ -1,0 +1,46 @@
+@import "normalize.css";
+* {
+  box-sizing: border-box;
+}
+.paging .paging-pre,
+.paging .paging-next {
+  display: inline-block;
+  vertical-align: baseline;
+  width: 30px;
+  height: 30px;
+  color: #666666;
+  background-color: #ffffff;
+  cursor: pointer;
+  border: 1px solid #d2dae3;
+  border-radius: 2px;
+}
+.paging .paging-list {
+  display: inline-block;
+  vertical-align: baseline;
+}
+.paging .paging-list .paging-item {
+  display: inline-block;
+  vertical-align: baseline;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  color: #666666;
+  background-color: #ffffff;
+  border-radius: 2px;
+}
+.paging .paging-list .paging-item.active {
+  color: #ed5630;
+  background-color: #ed5630;
+}
+.paging .paging-jump {
+  display: inline-block;
+  vertical-align: baseline;
+}
+.paging .paging-total-num {
+  display: inline-block;
+  vertical-align: baseline;
+}
+.paging .paging-total-page {
+  display: inline-block;
+  vertical-align: baseline;
+}

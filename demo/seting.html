@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="data-spm" content="a2d02">
+    <meta charset="gbk"/>
+    <base target="_self"/>
+    <title>菜鸟驿站</title>
+    <script src="//g.alicdn.com/tb/tracker/1.0.13/index.js"></script>
+    <script type="text/javascript">JSTracker.config('sampling', 10);</script>
+    <script src="//g.alicdn.com/kissy/k/1.4.14/??seed-min.js,import-style.js"></script>
+    <script src="//g.alicdn.com/cn/posthouse/1.9.21/frameworks/structure.min.js"></script>
+    <script src="//g.alicdn.com/mui/seed/1.3.1/seed.js"></script>
+    <link rel="stylesheet" href="//g.alicdn.com/cn/posthouse/1.9.21/pages/common/??reset.css,lib.css,base.css">
+
+    <script src="//g.alicdn.com/tb/apush/0.0.1/??socketio.js,apush.js"></script>
+    <script src="//g.alicdn.com/cn/posthouse/1.9.10/components/remotePrint/index.js"></script>
+
+
+    <script>
+        (function (S) {
+            S.config({
+                packages: [
+                    {
+                        name: 'ccc',
+                        debug: true,
+                        path: '//g.alicdn.com/ccc',
+                        ignorePackageNameInUri: true
+                    },
+                    {
+                        name: 'kg',
+                        "path": "//g.alicdn.com/kg/",
+                        "ignorePackageNameInUri": true,
+                        "debug": true
+                    },
+                    {
+                        name: 'tbc',
+                        "path": "//g.alicdn.com/tbc/",
+                        "ignorePackageNameInUri": true,
+                        "debug": true
+                    },
+                    {
+                        name: 'gallery',
+                        "path": "//assets.alicdn.com/s/kissy/gallery/",
+                        "ignorePackageNameInUri": true,
+                        "debug": true
+                    },
+                    {
+                        name: 'components',
+                        path: '//g.alicdn.com/cn/posthouse/1.9.21/components',
+                        debug: true,
+                        ignorePackageNameInUri: true
+                    },
+                    {
+                        name: 'pages',
+                        path: '//g.alicdn.com/cn/posthouse/1.9.21/pages',
+                        debug: true,
+                        ignorePackageNameInUri: true
+                    }
+                ],
+                combine: false
+            });
+
+            var css = [
+                'pages/settings/index.css'
+            ];
+
+            S.importStyle(css.join());
+        })(KISSY);
+    </script>
+</head>
+
+
+<body data-spm="">
+<script>
+    with (document)with (body)with (insertBefore(createElement("script"), firstChild))setAttribute("exparams", "category=&userid=3685747867&aplus&yunid=&asid=AZsMsNs1ca5Xje+bcAAAAACtna38E5QMMg==", id = "tb-beacon-aplus", src = (location > "https" ? "//s" : "//a") + ".tbcdn.cn/s/aplus_v2.js")
+</script>
+
+<input type="hidden" id="J_Ie67" value="/ie67.htm">
+<!-- enyi 所有页面共用长连接参数-->
+<input type="hidden" id="J_APushRemotePrint"
+       value="?param=a4b73831538775b9eeb79a5f0e5ac5db,cainiao_station_print,%2FUabUUuzsTufG%2B4XCMlr9DeQtoO9l0rgFNAwZIHaKhy8E1DlNniJCRHtE85EwhTW&amp;terminalType=232323309221&amp;terminalId=232323309221"/>
+<input type="hidden" id="J_APushStationId" value="232323309221"/>
+
+<div class="cn-app clearfix">
+
+    <div class="cn-aside">
+
+        <div class="header">
+            <h1 class="logo iconfont">&#xe610;</h1>
+
+            <h2 class="station" data-id="232323309221">
+                芳芳校园众包驿站
+            </h2>
+
+            <div class="user">
+                <span>zbyz1</span>
+                <a class="logout iconfont" rel="nofollow"
+                   href="//login.daily.taobao.net/member/logout.jhtml?redirectURL=http://cainiaoyz.i56.daily.taobao.net/poststation/settingsThird.htm"
+                   target="_top">&#xe611;</a>
+            </div>
+        </div>
+
+        <div class="menu">
+            <ul class="nav nav-white-list">
+                <!--首页-->
+                <li>
+                    <a class="nav-item" href="/index.htm"><!-- 根据类型判断，村淘站点用/indexOld.htm -->
+                        <i class="icon icon-home"></i>首页
+                    </a>
+                </li>
+                <li data-parent="bggl">
+                    <a class="nav-item" href="/poststation/newBill.htm">
+                        <i class="icon icon-enrol-only"></i>包裹入库</a>
+                </li>
+                <li data-parent="bggl">
+                    <a class="nav-item" href="/poststation/packageOut.htm">
+                        <i class="icon icon-package-out"></i>包裹出库</a>
+                </li>
+                <li data-parent="bggl">
+                    <a class="nav-item" href="/poststation/billSearch.htm">
+                        <i class="icon icon-bill-search"></i>查件</a>
+                </li>
+                <li data-parent="bggl">
+                    <a class="nav-item" href="/poststation/billPackageMove.htm">
+                        <i class="icon icon-package-move"></i>滞留件处理</a>
+                </li>
+                <!--<li  data-parent="bggl">
+                     <a class="nav-item" href="/poststation/failureSms.htm">
+                         <i class="icon icon-failure-sms"></i>失败短信</a>
+                 </li> -->
+                <!-- 支持寄件服务才展示寄件菜单-->
+
+                <li>
+                    <a class="nav-item trigger-more-post" href="/poststation/sendMailOnlineNotArrival.htm">
+                        <i class="icon icon-post"></i>
+                        寄件管理
+                    </a>
+                </li>
+                <!--升级版一定会展示设置界面，因为升级版有操作设置功能-->
+                <li class="active">
+                    <!--校园,第三方站点有负责人账号，需要展示操作设置和站点设置-->
+                    <a class="nav-item" href="/poststation/settingsThird.htm">
+
+                        <i class="icon icon-settings"></i>设置</a>
+                    <!-- 工单审核通知 -->
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="cn-main" style="min-height: 875px">
+        <link rel="stylesheet" href="../src/com/Pagination/setting.css"/>
+        <div class="cn-main-head">
+            <span class="cn-icon"></span>
+            <span class="cn-text"></span>
+        </div>
+        <div class="cn-main-body">
+            <div class="btn-switch">
+                <a class="switch-tab" href="/poststation/operateSettings.htm">
+                    <span class="tab-text">操作设置</span>
+                </a>
+                <a class="switch-tab active" href="/poststation/settingsThird.htm">
+                    <span class="tab-text">站点设置</span>
+                </a>
+            </div>
+            <div class="main-wrap">
+                <div class="operate-bar">
+                    <button class="btn fn-right">添加用户</button>
+                </div>
+                <div class="search-bar">
+                    <form class="form">
+                        <div class="fields">
+                            <div class="row">
+                                <div class="col">
+                                    <label class="label">姓名</label>
+                                    <input type="text" class="ipt" placeholder="请输入">
+                                </div>
+                                <div class="col">
+                                    <label class="label">联系电话</label>
+                                    <input type="text" class="ipt" placeholder="请输入">
+                                </div>
+                                <div class="col">
+                                    <label class="label">时间段</label>
+                                    <input type="text" class="ipt" placeholder="请输入">
+                                    <input type="text" class="ipt" placeholder="请输入">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="operate">
+                            <button class="btn">查询</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="result-box">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>姓名</th>
+                            <th>电话</th>
+                            <th>添加时间</th>
+                            <th>用户类型</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>王大锤</td>
+                            <td>13800138000</td>
+                            <td>2016-03-22</td>
+                            <td>疑难用户</td>
+                            <td>
+                                <button class="btn">删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>王大锤</td>
+                            <td>13800138000</td>
+                            <td>2016-03-22</td>
+                            <td>疑难用户</td>
+                            <td>
+                                <button class="btn">删除</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 在线客服悬浮框 -->
+<div class="float-box">
+    <a class="float-box-item service" href="//service.taobao.com/support/onlinecs/ocs.htm?source_id=1607165759"
+       target="_blank">
+        <!-- <i class="float-box-icon service"></i> -->
+        <div class="float-box-text">客服</div>
+    </a>
+    <hr class="float-box-hr"/>
+    <a class="float-box-item message" href="/poststation/activity/messagecenter/MyMessage.htm?from=msg" target="_blank">
+        <!-- <i class="float-box-icon message"></i> -->
+        <div class="float-box-text">消息</div>
+        <div class="float-box-reddot"></div>
+    </a>
+</div>
+<div class="footer-rec">
+    <div>
+        &copy; 2013~2016 菜鸟网络 版权所有
+        <a href="http://www.miitbeian.gov.cn/" target="_blank">浙ICP备15034046号-4</a>
+    </div>
+    <div style="padding:10px  0;">
+        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010002000082"
+           style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img
+                src="//img.alicdn.com/tps/TB19gQeKVXXXXcpXFXXXXXXXXXX-20-20.png" style="float:left;">
+
+            <p style="float:left;height:20px;line-height:20px;margin:  0px  0px  0px  5px;  color:#939393;">浙公网安备
+                33010002000082号</p></a>
+    </div>
+</div>
+</body>
+</html>

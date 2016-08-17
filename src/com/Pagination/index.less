@@ -1,0 +1,55 @@
+@import "normalize.css";
+*{
+	box-sizing: border-box;
+}
+@color:#666666;
+@bg-color:#fff;
+@border-color : #D2DAE3;
+@item-color:@color;
+@item-active-color:#ED5630;
+@item-bg-color:#fff;
+@item-bg-active-color:#ED5630;
+@border-radius:2px;
+.iBlock(){
+	display: inline-block;
+	vertical-align: baseline;
+}
+
+.paging{
+	.paging-pre,.paging-next{
+		.iBlock();
+		width: 30px;
+		height: 30px;
+		color : @color;
+		background-color: @bg-color;
+		cursor: pointer;
+		border:1px solid @border-color;
+		border-radius: @border-radius;
+		&.active{  }
+	}
+	.paging-list{
+		.iBlock();
+		.paging-item{
+			.iBlock();
+			height: 30px;
+			line-height: 30px;
+			padding: 0 10px;
+			color :@color;
+			background-color: @bg-color;
+			border-radius: @border-radius;
+			&.active{
+				color: @item-active-color;
+				background-color: @item-bg-active-color;
+			}
+		}
+	}
+	.paging-jump{
+		.iBlock();
+	}
+	.paging-total-num{
+		.iBlock();
+	}
+	.paging-total-page{
+		.iBlock();
+	}
+}

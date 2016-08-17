@@ -1,0 +1,25 @@
+{
+    "isSuccess" : true,
+    "data" : {
+        "userList" :[
+            {
+                "id":1,
+                "name" : "姓名1",
+                "mobile":13052218526,
+                "createTime" :"2016-2-23",
+                "userTypeDes" :"疑难用户"
+            },
+            {
+                "id":2,
+                "name" : "姓名2",
+                "mobile":13052218526,
+                "createTime" :"2016-2-23",
+                "userTypeDes" :"疑难用户"
+            }
+        ],
+        "totalPage":40,
+        "totalNum":300
+    },
+
+    "errorMsg" : "错误信息"
+}

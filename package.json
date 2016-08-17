@@ -21,9 +21,21 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "@alife/next-balloon": "^0.1.50",
+    "@alife/next-date-picker": "^0.1.24",
+    "@alife/next-dialog": "^0.2.0",
+    "@alife/next-pagination": "^0.1.25",
+    "@alife/next-select": "^0.2.8",
+    "@alife/next-util": "0.0.9",
+    "es6-promise": "^3.2.1",
+    "isomorphic-fetch": "^2.2.1",
+    "moment": "^2.14.1",
     "react": "^15.3.0",
     "react-dom": "^15.2.1",
     "react-redux": "^4.4.5",
-    "redux": "^3.5.2"
+    "react-router": "^2.6.1",
+    "redux": "^3.5.2",
+    "redux-logger": "^2.6.1",
+    "redux-thunk": "^2.1.0"
   }
 }

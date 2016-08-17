@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+}
+.label {
+  display: inline-block;
+  max-width: 100%;
+  padding-left: 25px;
+  margin-bottom: 5px;
+  color: #999;
+}
+.ipt {
+  display: inline-block;
+  width: 140px;
+  height: 30px;
+  padding: 0 10px;
+  font-size: 14px;
+  line-height: 30px;
+  color: #444853;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #D2DAE3;
+}
+.ipt:focus {
+  outline: none;
+  border-color: #b3c0cf;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.ipt:hover {
+  border: 1px solid #b3c0cf;
+}
+.ipt:disabled {
+  background-color: #dcdcdc;
+  color: #ccc;
+  box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.05);
+  border: 0;
+}
+.fn-left {
+  float: left;
+}
+.fn-right {
+  float: right;
+}
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid #DDDDDD;
+  white-space: nowrap;
+  user-select: none;
+  min-width: 88px;
+  background: #fff;
+  border-radius: 2px;
+  outline: none;
+  line-height: 1;
+  font-size: 14px;
+  padding: 6px 11px;
+}
+.btn:hover,
+.btn.hover,
+.btn:focus,
+.btn.focus {
+  text-decoration: none;
+}
+.form:before,
+.form:after {
+  content: " ";
+  display: table;
+}
+.form:after {
+  clear: both;
+}
+.form .fields {
+  float: left;
+  max-width: 870px;
+}
+.form .fields .col {
+  display: inline-block;
+  vertical-align: baseline;
+}
+.form .operate {
+  width: 120px;
+  float: right;
+}
+.table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+}
+.table tr th,
+.table tr td {
+  padding: 15px 20px;
+  line-height: 1;
+  text-align: left;
+  font-weight: 500;
+}
+.table tr th:first-child,
+.table tr td:first-child {
+  padding-left: 60px;
+}
+.table thead {
+  background-color: #F5F8FA;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.table tbody {
+  background-color: #fff;
+}
+.table tbody td {
+  padding: 10px 20px;
+  border-bottom: 1px solid #eee;
+}
+.table tbody tr:nth-child(even) td {
+  background-color: #FCFCFC;
+}
+.main-wrap {
+  background-color: #F3F6F8;
+  padding: 20px 20px 30px 20px;
+}
+.main-wrap .operate-bar {
+  padding-bottom: 20px;
+}
+.main-wrap .operate-bar:before,
+.main-wrap .operate-bar:after {
+  content: " ";
+  display: table;
+}
+.main-wrap .operate-bar:after {
+  clear: both;
+}
+.main-wrap .search-bar {
+  background-color: #fff;
+  padding: 30px 0;
+}
+.main-wrap .result-box {
+  margin-top: 20px;
+}

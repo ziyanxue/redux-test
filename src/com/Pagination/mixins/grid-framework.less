@@ -1,0 +1,100 @@
+// Framework grid generation
+// ==========================================================================
+// Used only by Bootstrap to generate the correct number of grid classes given
+// any value of `@grid-columns`.
+
+.make-grid-columns() {
+	// Common styles for all sizes of grid columns, widths 1-24
+	.col(@index) when (@index = 1) {
+		// initial
+		@item: ~".col-lg-@{index}";
+		.col((@index + 1), @item);
+	}
+	.col(@index, @list) when (@index =< @grid-columns) {
+		// general; "=<" isn't a typo
+		@item: ~".col-lg-@{index}";
+		.col((@index + 1), ~"@{list}, @{item}");
+	}
+	.col(@index, @list) when (@index > @grid-columns) {
+		// terminal
+		@{list} {
+			position:   relative;
+			// Prevent columns from collapsing when empty
+			min-height: 1px;
+			float:      left;
+		}
+	}
+	.col(1); // kickstart it
+}
+
+// 设置列浮动
+.float-grid-columns(@class) {
+	.col(@index) when (@index = 1) {
+		// initial
+		@item: ~".col-@{class}-@{index}";
+		.col((@index + 1), @item);
+	}
+	.col(@index, @list) when (@index =< @grid-columns) {
+		// general
+		@item: ~".col-@{class}-@{index}";
+		.col((@index + 1), ~"@{list}, @{item}");
+	}
+	.col(@index, @list) when (@index > @grid-columns) {
+		// terminal
+		@{list} {
+			float: left;
+		}
+	}
+	.col(1); // kickstart it
+}
+
+// 计算列宽
+.calc-grid-column(@index, @class, @type) when (@type = percentage) and (@index > 0) {
+	.col-@{class}-@{index} {
+		width: percentage((@index / @grid-columns));
+		&.col-fixed {
+			width:     @index * @grid-column-fixed-width !important;
+			min-width: @index * @grid-column-fixed-width;
+		}
+	}
+}
+
+.calc-grid-column(@index, @class, @type) when (@type = fixed) and (@index > 0) {
+	.col-@{class}-@{index} {
+		width: @index * @grid-column-fixed-width !important;
+	}
+}
+
+.calc-grid-column(@index, @class, @type) when (@type = flex) and (@index > 0) {
+	> .col-@{class}-@{index} {
+		width:          @index * @grid-column-fixed-width;
+		display:        table-cell;
+		float:          none;
+		vertical-align: top;
+	}
+}
+
+.calc-grid-column(@index, @class, @type) when (@type = offset) {
+	.col-@{class}-offset-@{index} {
+		margin-left: percentage((@index / @grid-columns));
+	}
+}
+
+.calc-grid-column(@index, @class, @type) when (@type = offset-fixed) {
+	> .col-@{class}-offset-@{index} {
+		margin-left: @index * @grid-column-fixed-width;
+	}
+}
+
+// Basic looping in LESS
+.loop-grid-columns(@index, @class, @type) when (@index >= 0) {
+	.calc-grid-column(@index, @class, @type);
+	// next iteration
+	.loop-grid-columns((@index - 1), @class, @type);
+}
+
+// Create grid for specific class
+.make-grid(@class,@width-type, @offset-type) {
+	.loop-grid-columns(@grid-columns, @class, @width-type);
+	.loop-grid-columns(@grid-columns, @class, @offset-type);
+}

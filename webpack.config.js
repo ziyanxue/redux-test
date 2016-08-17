@@ -28,7 +28,10 @@ console.log(entrys);
 module.exports = {
     entry: entrys,
     output: {
-        path: path.resolve(__dirname, "build"),
+        //path: path.resolve(__dirname, "build"),
+        path : {
+            userSetting : './src/userSetting.js'
+        },
         publicPath: '/build/',
         filename: '[name].js'
     },
