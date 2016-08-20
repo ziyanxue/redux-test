@@ -1,10 +1,13 @@
 import React ,{PropTyps,Component} from 'react';
-// import '@alife/next-pagination/lib/index.scss';
-import Pagination from '@alife/next-pagination';
-import Balloon,{Tooltip} from '@alife/next-balloon';
+import Balloon from '@alife/next-balloon';
 import Dialog from '@alife/next-dialog';
+import Pagination from '../../components/pagination'
 
-//const Tooltip = Balloon.Tooltip;
+import '@alife/next-balloon/lib/index.scss';
+import '@alife/next-dialog/lib/index.scss';
+
+const Tooltip = Balloon.Tooltip;
+
 
 class SearchResult extends Component {
 
@@ -12,15 +15,11 @@ class SearchResult extends Component {
         this.props.onPageChange(curPage);
     }
 
-    test() {
-        alert(1);
-    }
-
     delConfirm(user) {
         return Dialog.confirm({
-            content: 'confirm',
+            content: '是否删除该用户？',
             locale: {
-                ok: '确认',
+                ok: '删除',
                 cancel: '取消'
             },
             className: 'confirm',
@@ -46,6 +45,9 @@ class SearchResult extends Component {
                             <Tooltip trigger={desDom} align="t" text="TODO疑难用户解释"/>
                         </td>
                         <td>
+                            {item.partition}
+                        </td>
+                        <td>
                             <button className="btn" onClick={this.delConfirm.bind(this,item)}>删除</button>
                         </td>
                     </tr>
@@ -64,6 +66,7 @@ class SearchResult extends Component {
                             <th>电话</th>
                             <th>添加时间</th>
                             <th>用户类型</th>
+                            <th>分拣区号</th>
                             <th>操作</th>
                         </tr>
                         </thead>
@@ -71,10 +74,12 @@ class SearchResult extends Component {
                         {this._renderBody()}
                         </tbody>
                     </table>
+                    <div className="paging-box">
+                        <Pagination current={curPage} total={totalSize} onChange={this.pageChange.bind(this)}/>
+                    </div>
                 </div>
 
         );
     }
 }
-//<Pagination current={curPage} total={totalPage} onChange={this.pageChange.bind(this)}/>
 export default SearchResult;

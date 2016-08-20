@@ -1,0 +1,149 @@
+@color: #666666;
+@bg-color: #fff;
+@border-color : #D2DAE3;
+@disabled-bg-color:#F7F8FA;
+@item-color: #757575;
+@item-active-color: #fff;
+@item-bg-color: #fff;
+@item-bg-hover-color: #D2DAE3;
+@item-bg-active-color: #ED5630;
+@item-bg-active-hover-color: #EA3D12;
+@border-radius: 2px;
+@arr-color: #BBBBBB;
+
+.iBlock() {
+	display: inline-block;
+	vertical-align: baseline;
+}
+
+.height() {
+	height: 28px;
+	line-height: 28px;
+}
+
+.clearfix() {
+	&:after {
+		visibility: hidden;
+		display: block;
+		height: 0;
+		font-size: 0;
+		content: ' ';
+		clear: both;
+	}
+}
+
+.paging {
+	.clearfix();
+	.iBlock();
+	.paging-pre, .paging-next {
+		float: left;
+		position: relative;
+		width: 28px;
+		.height();
+		color: @color;
+		background-color: @bg-color;
+		cursor: pointer;
+		border: 1px solid @border-color;
+		border-radius: @border-radius;
+		&:after {
+			position: absolute;
+			top: 7px;
+			border-width: 6px;
+			border-style: solid;
+			content: '';
+		}
+		&.paging-pre {
+			margin-left: 10px;
+			&:after {
+				left: 4px;
+				border-color: transparent @arr-color transparent transparent;
+			}
+		}
+		&.paging-next {
+			margin-right: 10px;
+			&:after {
+				right: 4px;
+				border-color: transparent transparent transparent @arr-color;
+			}
+		}
+		&.disabled{
+			background-color: @disabled-bg-color;
+			cursor: not-allowed;
+		}
+		&:hover {
+		}
+	}
+	.paging-list {
+		float: left;
+		.paging-item {
+			.iBlock();
+			.height();
+			padding: 0 10px;
+			margin-left: 6px;
+			color: @item-color;
+			background-color: @bg-color;
+			border: 1px solid @border-color;
+			border-radius: @border-radius;
+			&:last-child {
+				margin-right: 6px;
+			}
+			&.current {
+				color: @item-active-color;
+				background-color: @item-bg-active-color;
+				border-color: transparent;
+				&:hover {
+					background-color: @item-bg-active-hover-color;
+				}
+			}
+			&:hover {
+				cursor: pointer;
+				background-color: @item-bg-hover-color;
+			}
+		}
+		.page-dot + .paging-item{
+			margin-left:0;
+		}
+		.page-dot{
+			margin: 0 6px;
+			color: @color;
+			font-size:12px;
+		}
+	}
+	.paging-jump {
+		.height();
+		float: left;
+		color: @color;
+		font-size: 12px;
+		.text {
+			.iBlock();
+			.height();
+			width: 50px;
+			border: 1px solid @border-color;
+			border-radius: 2px;
+			text-align: center;
+			margin: 0 10px;
+		}
+		.go-to {
+			.iBlock();
+			.height();
+			cursor: pointer;
+			width: 56px;
+			color: @color;
+			font-size: 12px;
+			border: 1px solid @border-color;
+			background-color: #FBFBFB;
+			border-radius: 2px;
+			padding: 0;
+			margin-left: 10px;
+		}
+	}
+	.paging-total-num {
+		.height();
+		float: left;
+		color: @color;
+		font-size: 12px;
+	}
+	.paging-total-page {
+		float: left;
+	}
+}

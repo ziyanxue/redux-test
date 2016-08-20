@@ -4,7 +4,6 @@ import {updateSearchParams,search,updatePage,changePage,delUser,addUser} from '.
 import ActionBar from '../community/components/actionBar';
 import SearchBar from '../components/SearchBar';
 import SearchResult from '../community/components/searchResult';
-import Paging from '../components/pagination'
 
 class App extends Component {
     constructor(props) {
@@ -26,7 +25,6 @@ class App extends Component {
                     <SearchBar {...searchParams} onUpdateSearchParams={onUpdateSearchParams} onUpdatePage={onUpdatePage}
                                                  onSearch={onSearch}/>
                     <SearchResult {...searchResult} onPageChange={onPageChange} onSearch={onSearch} onDelUser={onDelUser}/>
-                    <Paging total={total} current={current}/>
                 </div>
         );
     }

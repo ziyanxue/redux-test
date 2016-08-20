@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import DatePicker,{RangePicker} from '@alife/next-date-picker';
+import '@alife/next-date-picker/lib/index.scss';
 
 class SearchBar extends Component {
     constructor(props) {
@@ -64,11 +65,12 @@ class SearchBar extends Component {
                                     <input type="text" className="ipt" placeholder="请输入联系电话" value={mobile}
                                            onChange={this.onFieldChange.bind(this,'mobile')}/>
                                 </div>
+
                                 <div className="col">
                                     <label className="label">时间段</label>
                                     <DatePicker disabledDate={this.disabledStartDate.bind(this)} value={startTime}
                                                 onChange={this.onStartTimeChange.bind(this)}/>
-                                    <span>至</span>
+                                    <span className="to">至</span>
                                     <DatePicker disabledDate={this.disabledEndDate.bind(this)} value={endTime}
                                                 onChange={this.onEndTimeChange.bind(this)}/>
                                 </div>

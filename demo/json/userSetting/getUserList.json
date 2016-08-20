@@ -7,6 +7,7 @@
                 "name" : "姓名1",
                 "mobile":13052218526,
                 "createTime" :"2016-2-23",
+                "partition":2,
                 "userTypeDes" :"疑难用户"
             },
             {
@@ -14,11 +15,12 @@
                 "name" : "姓名2",
                 "mobile":13052218526,
                 "createTime" :"2016-2-23",
+                "partition":4,
                 "userTypeDes" :"疑难用户"
             }
         ],
         "totalPage":40,
-        "totalNum":300
+        "totalSize":300
     },
 
     "errorMsg" : "错误信息"

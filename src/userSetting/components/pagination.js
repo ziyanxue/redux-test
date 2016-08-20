@@ -1,14 +1,15 @@
 import React,{PropTypes,Component} from 'react';
 import classNames from 'classnames';
+import './pagination.less';
 
 class Pagination extends Component {
     constructor(props) {
         super(props);
     }
 
-    getTotalPage() {
-        const {total,pageSize} = this.props;
-        return Math.ceil(total / pageSize);
+    componentDidUpdate(nextProps) {
+        this.textValue = nextProps.current;
+        this.refs.textNum.value = this.textValue;
     }
 
     renderTotalNum(total) {
@@ -20,7 +21,16 @@ class Pagination extends Component {
             'paging-pre': true,
             disabled: (current <= 1)
         });
-        return <button className={className}>上一页</button>
+        return <button onClick={this.preHandle.bind(this)} className={className}></button>
+    }
+
+    renderNext(current) {
+        const totalPage = this.totalPage;
+        const className = classNames({
+            'paging-next': true,
+            disabled: (current >= totalPage)
+        });
+        return <button onClick={this.nextHandle.bind(this)} className={className}></button>;
     }
 
     renderPageItem(num) {
@@ -29,7 +39,7 @@ class Pagination extends Component {
             'paging-item': true,
             current: (num == current)
         });
-        return <span className={className} key={num}>{num}</span>
+        return <span onClick={this.pageChangeHandle.bind(this,num)} className={className} key={num}>{num}</span>
     }
 
     renderEllipsis() {
@@ -38,7 +48,7 @@ class Pagination extends Component {
 
     renderMiddlePages() {
         const {current,total,siblings} = this.props;
-        const totalPage = this.getTotalPage();
+        const totalPage = this.totalPage;
         let pages = [];
         //const showLeftEllipsis = (current - siblings) > 2;
         //const showRightEllipsis = (current + siblings + 1) < totalPage;
@@ -78,7 +88,7 @@ class Pagination extends Component {
 
     renderList() {
         const {current,total,siblings} = this.props;
-        const totalPage = this.getTotalPage();
+        const totalPage = this.totalPage;
         const showLeftEllipsis = (current - siblings) > 2;
         const showRightEllipsis = (current + siblings + 1) < totalPage;
         console.log(current + siblings + 1);
@@ -93,48 +103,78 @@ class Pagination extends Component {
         )
     }
 
-    renderNext() {
-        return <button className="paging-next">下一页</button>;
-    }
 
-    renderPageJump(current) {
+    renderPageJump() {
+        const {current} = this.props;
         return (
                 <div className="paging-jump">
                     去第
                         <span>
-                            <input type="text" defaultValue={current}/>
+                            <input type="text" className="text" ref="textNum" onChange={this.textChangeHandle.bind(this)}
+                                   defaultValue={current}/>
                         </span>
                     页
-                    <button>跳转</button>
+                    <button className="go-to" onClick={this.jumpHandle.bind(this)}>跳转</button>
                 </div>
         )
     }
 
-    preHandle() {
+    preHandle(e) {
+        const {current} = this.props;
+        if (current <= 1) return;
+        this.props.onChange(current - 1);
     }
 
-    nextHandle() {
+    nextHandle(e) {
+        const totalPage = this.totalPage;
+        const {current} = this.props;
+        if (current >= totalPage) return;
+        this.props.onChange(current + 1);
     }
 
-    jumpHandle() {
+    jumpHandle(e) {
+        const totalPage = this.totalPage;
+        const {current} = this.props;
+        var value = this.textValue * 1;
+        if (!Number.isInteger(value) || value < 1) {
+            this.refs.textNum.value = 1;
+            value = 1;
+        } else if (value > totalPage) {
+            this.refs.textNum.value = totalPage;
+            value = totalPage;
+        }
+
+        if (value == current) return;
+        this.props.onChange(value);
     }
 
-    pageChangeHandle() {
+
+    pageChangeHandle(num, e) {
+        const {current} = this.props;
+        if (num != current) {
+            this.props.onChange(num);
+        }
     }
 
-    textChangeHandle() {
+    textChangeHandle(e) {
+        var value = e.target.value;
+        this.textValue = value;
+        /*this.setState({
+            textValue: value
+        });*/
+        console.log(value);
     }
 
     render() {
         const {current,total,pageSize,siblings} = this.props;
-
+        this.totalPage = Math.ceil(total / pageSize);
         return (
                 <div className="paging">
                     {this.renderTotalNum(total)}
                     {this.renderPre(current)}
                     {this.renderList()}
                     {this.renderNext(current)}
-                    {this.renderPageJump(current)}
+                    {this.renderPageJump()}
                 </div>
         )
     }

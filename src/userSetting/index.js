@@ -8,6 +8,8 @@ import reducers from './reducers';
 import CampusApp from './container/campus';
 import CommunityApp from './container/community';
 
+import "./style/index.less";
+
 const root = document.getElementById('J_root');
 const loggerMiddleware = createLogger();
 let store = createStore(
