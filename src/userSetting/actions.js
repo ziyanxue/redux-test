@@ -17,6 +17,7 @@ export const ADD_USER_SUCCESS = 'ADD_USER_SUCCESS';
 export const DEL_USER = 'DEL_USER';
 
 /****************************************/
+
 export function addUser(user,fn) {
     return (dispatch, getState)=> {
         $.ajax({
@@ -127,5 +128,3 @@ export function updatePage(curPage) {
         curPage
     }
 }
-
-

@@ -29,7 +29,8 @@ console.log(entrys);
 //entry: entrys,
 module.exports = {
     entry: {
-        userSetting: ['./src/pages/userSetting.js', 'webpack/hot/only-dev-server']
+        // userSetting: ['./src/pages/userSetting.js', 'webpack/hot/only-dev-server']
+        todoMvc: ['./src/pages/todoMvc.js', 'webpack/hot/only-dev-server']
     },
     output: {
         path: path.resolve(__dirname, "build"),

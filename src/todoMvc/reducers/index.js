@@ -1,5 +1,12 @@
-import {combineReducers} from 'redux'
-import {ADD_TODO,COMPLETE_TODO,FILTER_TODO,FILTER_STATES} from '../actions'
+import {
+    combineReducers
+} from 'redux'
+import {
+    ADD_TODO,
+    COMPLETE_TODO,
+    FILTER_TODO,
+    FILTER_STATES
+} from '../actions'
 
 function filterState(state = FILTER_STATES.SHOW_ALL, action) {
     switch (action.type) {
@@ -11,12 +18,11 @@ function filterState(state = FILTER_STATES.SHOW_ALL, action) {
     }
 }
 
-function todos(state=[], action) {
+function todos(state = [], action) {
     switch (action.type) {
         case ADD_TODO:
             return [
-                ...state,
-                {
+                ...state, {
                     text: action.text
                 }
             ]
@@ -30,15 +36,22 @@ function todos(state=[], action) {
                 ...state.slice(action.i + 1)
             ]
             break;
-        default :
+        default:
             return state;
     }
 }
 
-//TODO 手动
-const reducers = combineReducers({
-    filterState,
-    todos
-});
 
+// const reducers = combineReducers({
+//     filterState,
+//     todos
+// });
+
+//TODO 手动
+function reducers(state = {}, action) {
+    return {
+        filterState: filterState(state.filterState, action),
+        todos: todos(state.todos, action)
+    }
+}
 export default reducers;
