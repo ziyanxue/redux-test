@@ -1,5 +1,6 @@
 npm-debug.log
 .idea/
+.idea/*
 .idea/workspace.xml
 .DS_Store
 Thumbs.db
